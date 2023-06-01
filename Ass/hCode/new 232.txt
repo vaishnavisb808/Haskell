@@ -1,0 +1,42 @@
+mySqr :: [Integer]
+
+mySqr = [x^2 | x <- [1..5]]
+
+
+
+myCube :: [Integer]
+
+myCube = [y^3 | y <- [1..5]]
+
+
+
+
+-- 1. First write an expression that will make tuples of the outputs
+
+-- of mySqr and myCube.
+
+sqrCube :: [(Integer, Integer)]
+
+sqrCube = zip mySqr myCube
+
+
+
+
+-- 2. Now alter that expression so that it only uses the x and y
+
+-- values that are less than 50.
+
+sqrCubeLT50 :: [(Integer, Integer)]
+
+sqrCubeLT50 = [(x,y)|(x,y)<-zip mySqr myCube,x<50,y<50]
+
+
+
+
+-- 3. Apply another function to that list comprehension to
+
+-- determine how many tuples inhabit your output list.
+
+sqrCubeLT50Length :: Int
+
+sqrCubeLT50Length = length [(x,y)|(x,y)<-zip mySqr myCube,x<50,y<50]

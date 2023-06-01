@@ -1,0 +1,30 @@
+	Tue Sep 28 13:13 2021 Time and Allocation Profiling Report  (Final)
+
+	   profiling_basics28.exe +RTS -s -P -RTS
+
+	total time  =        0.04 secs   (35 ticks @ 1000 us, 1 processor)
+	total alloc = 377,964,352 bytes  (excludes profiling overheads)
+
+COST CENTRE MODULE SRC                            %time %alloc  ticks     bytes
+
+CAF         Main   <entire-module>                 85.7   91.4     30 345572768
+MAIN        MAIN   <built-in>                       8.6    0.1      3    308328
+sma-        Main   profiling_basics28.hs:7:30-34    2.9    2.5      1   9599920
+list-       Main   profiling_basics28.hs:6:30-40    2.9    3.4      1  12800128
+sum-        Main   profiling_basics28.hs:8:30-34    0.0    2.5      0   9599920
+
+
+                                                                                       individual      inherited
+COST CENTRE  MODULE                   SRC                           no.     entries  %time %alloc   %time %alloc  ticks     bytes
+
+MAIN         MAIN                     <built-in>                    134           0    8.6    0.1   100.0  100.0      3    308328
+ CAF         GHC.IO.Handle.FD         <entire-module>               247           0    0.0    0.0     0.0    0.0      0     34880
+ CAF         GHC.IO.StdHandles        <entire-module>               172           0    0.0    0.0     0.0    0.0      0        48
+ CAF         GHC.IO.Handle.Text       <entire-module>               169           0    0.0    0.0     0.0    0.0      0        64
+ CAF         GHC.IO.Encoding.CodePage <entire-module>               159           0    0.0    0.0     0.0    0.0      0       184
+ CAF         GHC.IO.Encoding          <entire-module>               158           0    0.0    0.0     0.0    0.0      0        88
+ CAF         GHC.Float                <entire-module>               151           0    0.0    0.0     0.0    0.0      0     48024
+ CAF         Main                     <entire-module>               141           0   85.7   91.4    91.4   99.9     30 345572768
+  list-      Main                     profiling_basics28.hs:6:30-40 270           1    2.9    3.4     2.9    3.4      1  12800128
+  sma-       Main                     profiling_basics28.hs:7:30-34 269           1    2.9    2.5     2.9    2.5      1   9599920
+  sum-       Main                     profiling_basics28.hs:8:30-34 268           1    0.0    2.5     0.0    2.5      0   9599920
