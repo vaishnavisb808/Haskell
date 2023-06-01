@@ -1,0 +1,8 @@
+myWords :: [Char]->[[Char]]
+  myWords inpString |not (null inpString)=takeWhile (/=' ') inpString:                   
+   if null(remainingString) 
+                          then []                         
+  else myWords(tail(remainingString))                  
+  | otherwise=[inpString]                  
+  where remainingString = dropWhile (/=' ') inpString
+

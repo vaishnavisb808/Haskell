@@ -1,0 +1,13 @@
+splitBy::String->Char->[String]
+
+splitBy inpString matchChar |not (null inpString)=takeWhile (/=matchChar) inpString:
+
+                    if null inpString || (length remainingString==1 && head remainingString==matchChar) || null remainingString
+
+                        then []
+
+                        else splitBy (tail remainingString) matchChar
+
+                  |otherwise=[inpString]
+
+                    where remainingString = dropWhile (/=matchChar) inpString
