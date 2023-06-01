@@ -1,0 +1,12 @@
+data BookInfo =Book Int String [Author] deriving (Show) 
+--data MagazinInfo =Magazin Int String [String] deriving (Show)
+myInfo =Book 987654321 "asdfghjkl" [myAuth1,myAuth2]
+myInfo =Book 987777777 "fghjkl" [myAuth1]
+data Author = Author String Int deriving (Show)
+myAuth1 = Author "sai" 11
+myAuth2 = Author "vaish" 15
+data BookReview = BookReview BookInfo CustomerId String
+type CustomerId =Int
+type ReviwBody =String
+data BetterReview = BetterReview BookInfo CustomerId ReviwBody
+type BookRecord = (BookInfo,BetterReview)

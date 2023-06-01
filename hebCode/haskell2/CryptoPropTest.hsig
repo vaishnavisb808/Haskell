@@ -1,0 +1,4 @@
+import Test.QuickCheck
+import Crypto
+
+inverse xs= (decrypt.encrypt) xs== xs
