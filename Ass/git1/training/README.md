@@ -1,0 +1,2 @@
+# Training
+haskell training
