@@ -1,0 +1,35 @@
+{
+    "futureLogic":{
+       "storeExceptions":[{
+         "rule":{
+            "adjustmentMethod": "bankersRounding",
+            "ignoreClearancePrice": "true",
+            "noMarkupIfOnAd": "true",
+            "markupBasisPoints": 109
+         },
+         "store" : "23"
+         ,"zone" : "45"
+
+       }
+        
+       ],
+       "zoneExceptions":[{
+         "rule":{
+            "adjustmentMethod": "bankersRounding",
+            "ignoreClearancePrice": "true",
+            "noMarkupIfOnAd": "true",
+            "markupBasisPoints": 109
+         },
+         "zone" : "45"
+       }   
+       ],
+       "rule":{
+         "adjustmentMethod": "bankersRounding",
+         "ignoreClearancePrice": "true",
+         "noMarkupIfOnAd": "true",
+         "markupBasisPoints": 105
+      },
+       "effective":"01-21-2022"
+    },
+    "upc":123
+ }
