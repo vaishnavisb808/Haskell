@@ -1,0 +1,134 @@
+name:                shopper-api
+version:             0.1.0.0
+github:              "haskellers_g10x/shopper-api"
+license:             BSD3
+author:              "Author name here"
+maintainer:          "example@example.com"
+copyright:           "2022 Author name here"
+
+extra-source-files:
+- README.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/ShopperAPI#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- aeson
+- servant-server
+- wai
+- warp
+- time
+- text
+- bytestring
+- servant-auth-server
+- resource-pool
+- postgresql-simple
+- containers
+- exceptions
+- transformers
+- mtl
+- http-types
+- unliftio
+- servant
+- servant-auth-server
+- text
+- monad-time
+- time
+- directory
+- utf8-string
+- regex-posix
+- bcrypt
+- datadog
+- hspec
+- hspec-wai
+- hspec-wai-json
+- lens
+- uuid
+- email-validate
+- regex-tdfa
+- exceptions
+- bcrypt
+- regex-tdfa
+- containers
+- bcrypt
+- regex-tdfa
+- mtl
+library:
+  source-dirs: src
+
+executables:
+  ShopperAPI-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - base
+    - shopper-api
+    - regex-posix
+    - mtl
+    - aeson
+    - servant-server
+    - wai
+    - warp
+    - time
+    - text
+    - bytestring
+    - servant-auth-server
+    - resource-pool
+    - postgresql-simple
+    - containers
+    - exceptions
+    - transformers
+    - mtl
+    - http-types
+    - unliftio
+    - servant
+    - servant-auth-server
+    - text
+    - monad-time
+    - time
+    - directory
+    - utf8-string
+    - bcrypt
+    - datadog
+    - hspec
+    - hspec-wai
+    - hspec-wai-json
+    - lens
+    - uuid
+    - email-validate
+    - regex-tdfa
+
+
+tests:
+  ShopperAPI-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - base
+    - shopper-api
+    - hspec
+    - hspec-wai
+    - hspec-wai-json
+    - aeson
+    - monad-time
+    - containers
+    - servant-auth-server
+    - text
+    - http-types
+    - regex-posix
+    - mtl

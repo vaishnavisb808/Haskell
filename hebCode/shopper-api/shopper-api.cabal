@@ -1,0 +1,223 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           shopper-api
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/ShopperAPI#readme>
+homepage:       https://github.com/haskellers_g10x/shopper-api#readme
+bug-reports:    https://github.com/haskellers_g10x/shopper-api/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2022 Author name here
+license:        BSD3
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/haskellers_g10x/shopper-api
+
+library
+  exposed-modules:
+      ShopperAPI.Api.Handler.AddAddressHandlers
+      ShopperAPI.Api.Handler.AddCommentOnaProducthandler
+      ShopperAPI.Api.Handler.AddorRemoveCategoryHandler
+      ShopperAPI.Api.Handler.AddOrRemoveWHManager
+      ShopperAPI.Api.Handler.AddProductHandler
+      ShopperAPI.Api.Handler.CartQunatityUpdateHandler
+      ShopperAPI.Api.Handler.EditProductHandler
+      ShopperAPI.Api.Handler.InsertAndRemoveCartHandler
+      ShopperAPI.Api.Handler.LoginHandler
+      ShopperAPI.Api.Handler.MarkAsShipped
+      ShopperAPI.Api.Handler.OrderStatusUpdateHandler
+      ShopperAPI.Api.Handler.ProductUnavailbiltyHandler
+      ShopperAPI.Api.Handler.RemoveProductHandler
+      ShopperAPI.Api.Handler.TemporaryProductChange
+      ShopperAPI.Api.Handler.UpdateStockHandlers
+      ShopperAPI.Api.Handler.UserSignupHandler
+      ShopperAPI.Api.Handler.ViewAllProductsHandler
+      ShopperAPI.Api.Handler.ViewCartHandler
+      ShopperAPI.Api.Handler.ViewProductsByRatingHandler
+      ShopperAPI.Api.Handler.ViewWishlistHandler
+      ShopperAPI.Api.MiddleWare.Auth.TokenGeneration
+      ShopperAPI.Api.MiddleWare.Auth.Types
+      ShopperAPI.Api.Types
+      ShopperAPI.Core.Config.Config
+      ShopperAPI.Core.Config.Types
+      ShopperAPI.Core.Transformers
+      ShopperAPI.Core.Types
+      ShopperAPI.Core.Utils
+      ShopperAPI.Server
+      ShopperAPI.Services.Database.AddAddressDB
+      ShopperAPI.Services.Database.AddComment
+      ShopperAPI.Services.Database.AddorRemoveCategory
+      ShopperAPI.Services.Database.AddOrRemoveWHManager
+      ShopperAPI.Services.Database.AddProduct
+      ShopperAPI.Services.Database.CartQuantityUpdateDB
+      ShopperAPI.Services.Database.EditProduct
+      ShopperAPI.Services.Database.GetUserDetails
+      ShopperAPI.Services.Database.InsertAndRemoveCart
+      ShopperAPI.Services.Database.MarkAsShipped
+      ShopperAPI.Services.Database.OrderStatusUpdateDB
+      ShopperAPI.Services.Database.Postgres
+      ShopperAPI.Services.Database.RemoveProducts
+      ShopperAPI.Services.Database.TemporaryPriceChange
+      ShopperAPI.Services.Database.Types
+      ShopperAPI.Services.Database.UpdateAsUnavailable
+      ShopperAPI.Services.Database.UpdateStock
+      ShopperAPI.Services.Database.UserSignup
+      ShopperAPI.Services.Database.ViewAllProducts
+      ShopperAPI.Services.Database.ViewCart
+      ShopperAPI.Services.Database.ViewProducts
+      ShopperAPI.Services.Database.ViewWishlistDB
+      ShopperAPI.Services.Logger.Logger
+      ShopperAPI.Services.Logger.Types
+  other-modules:
+      Paths_shopper_api
+  hs-source-dirs:
+      src
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bcrypt
+    , bytestring
+    , containers
+    , datadog
+    , directory
+    , email-validate
+    , exceptions
+    , hspec
+    , hspec-wai
+    , hspec-wai-json
+    , http-types
+    , lens
+    , monad-time
+    , mtl
+    , postgresql-simple
+    , regex-posix
+    , regex-tdfa
+    , resource-pool
+    , servant
+    , servant-auth-server
+    , servant-server
+    , text
+    , time
+    , transformers
+    , unliftio
+    , utf8-string
+    , uuid
+    , wai
+    , warp
+  default-language: Haskell2010
+
+executable ShopperAPI-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_shopper_api
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base
+    , bcrypt
+    , bytestring
+    , containers
+    , datadog
+    , directory
+    , email-validate
+    , exceptions
+    , hspec
+    , hspec-wai
+    , hspec-wai-json
+    , http-types
+    , lens
+    , monad-time
+    , mtl
+    , postgresql-simple
+    , regex-posix
+    , regex-tdfa
+    , resource-pool
+    , servant
+    , servant-auth-server
+    , servant-server
+    , shopper-api
+    , text
+    , time
+    , transformers
+    , unliftio
+    , utf8-string
+    , uuid
+    , wai
+    , warp
+  default-language: Haskell2010
+
+test-suite ShopperAPI-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      AddAddressSpec
+      AddCategoryTest
+      AddCommentSpec
+      AddorRemoveWHM
+      AddProductSpec
+      CartQUpdate
+      CartSpec
+      EditProductHandlerSpec
+      LoggerSpec
+      LoginTest
+      MarkAsShippedSpec
+      MockDB
+      OrderStatusUpdateSpec
+      ProductUnavailabilitySpec
+      RemoveCategoryTest
+      RemoveProductSpec
+      TempSpec
+      UpdateStockHandlersSpec
+      UserSignupSpec
+      ViewAllProductsSpec
+      ViewCartSpec
+      ViewProductsByRatingSpec
+      ViewWishlistSpec
+      Paths_shopper_api
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base
+    , bcrypt
+    , bytestring
+    , containers
+    , datadog
+    , directory
+    , email-validate
+    , exceptions
+    , hspec
+    , hspec-wai
+    , hspec-wai-json
+    , http-types
+    , lens
+    , monad-time
+    , mtl
+    , postgresql-simple
+    , regex-posix
+    , regex-tdfa
+    , resource-pool
+    , servant
+    , servant-auth-server
+    , servant-server
+    , shopper-api
+    , text
+    , time
+    , transformers
+    , unliftio
+    , utf8-string
+    , uuid
+    , wai
+    , warp
+  default-language: Haskell2010

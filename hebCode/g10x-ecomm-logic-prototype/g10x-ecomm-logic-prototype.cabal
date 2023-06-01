@@ -1,0 +1,163 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           g10x-ecomm-logic-prototype
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/g10x-ecomm-logic-prototype#readme>
+homepage:       https://github.com/githubuser/g10x-ecomm-logic-prototype#readme
+bug-reports:    https://github.com/githubuser/g10x-ecomm-logic-prototype/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2022 Author name here
+license:        BSD3
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/g10x-ecomm-logic-prototype
+
+library
+  exposed-modules:
+      EcomApi.Api.Handler.Auth
+      EcomApi.Api.Handler.ModifyLogic
+      EcomApi.Api.Handler.ViewLogic
+      EcomApi.Api.Middleware.Auth.Auth
+      EcomApi.Api.Middleware.Auth.Types
+      EcomApi.Api.Types
+      EcomApi.Core.Config.Config
+      EcomApi.Core.Config.Types
+      EcomApi.Core.Transformers
+      EcomApi.Core.Transformers.Internal
+      EcomApi.Core.Types
+      EcomApi.Core.Utils
+      EcomApi.Server
+      EcomApi.Services.Database.GetAuthData
+      EcomApi.Services.Database.InsertLogic
+      EcomApi.Services.Database.ModifyLogic
+      EcomApi.Services.Database.Postgres
+      EcomApi.Services.Database.Types
+      EcomApi.Services.Database.ViewLogic
+      EcomApi.Services.Logger.Logger
+      EcomApi.Services.Logger.Types
+  other-modules:
+      Paths_g10x_ecomm_logic_prototype
+  hs-source-dirs:
+      src
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bcrypt
+    , bytestring
+    , containers
+    , datadog
+    , directory
+    , exceptions
+    , hspec
+    , hspec-wai
+    , hspec-wai-json
+    , http-types
+    , lens
+    , monad-time
+    , mtl
+    , postgresql-simple
+    , resource-pool
+    , servant
+    , servant-auth-server
+    , servant-server
+    , text
+    , time
+    , transformers
+    , unliftio
+    , utf8-string
+    , uuid
+    , wai
+    , warp
+  default-language: Haskell2010
+
+executable g10x-ecomm-logic-prototype-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_g10x_ecomm_logic_prototype
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bcrypt
+    , bytestring
+    , containers
+    , datadog
+    , directory
+    , exceptions
+    , g10x-ecomm-logic-prototype
+    , hspec
+    , hspec-wai
+    , hspec-wai-json
+    , http-types
+    , lens
+    , monad-time
+    , mtl
+    , postgresql-simple
+    , resource-pool
+    , servant
+    , servant-auth-server
+    , servant-server
+    , text
+    , time
+    , transformers
+    , unliftio
+    , utf8-string
+    , uuid
+    , wai
+    , warp
+  default-language: Haskell2010
+
+test-suite g10x-ecomm-logic-prototype-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      MockDatabase
+      ModifyLogicSpec
+      TransformersSpec
+      ViewLogicSpec
+      Paths_g10x_ecomm_logic_prototype
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base
+    , bcrypt
+    , bytestring
+    , containers
+    , datadog
+    , directory
+    , exceptions
+    , g10x-ecomm-logic-prototype
+    , hspec
+    , hspec-wai
+    , hspec-wai-json
+    , http-types
+    , lens
+    , monad-time
+    , mtl
+    , postgresql-simple
+    , resource-pool
+    , servant
+    , servant-auth-server
+    , servant-server
+    , text
+    , time
+    , transformers
+    , unliftio
+    , utf8-string
+    , uuid
+    , wai
+    , warp
+  default-language: Haskell2010

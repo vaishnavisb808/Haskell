@@ -1,0 +1,31 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment :
+      POSTGRES_PASSWORD : "${dbpasw}"
+    logging:
+      driver: none
+
+  server :
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on : 
+      - postgres
+    environment:
+      CONFIG : ${config}
+    
+  datadog-agent :
+    image : datadog/agent
+    environment : 
+      DD_API_KEY : ${datadog_api_key}
+      DD_LOGS_ENABLED : "true"
+      DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL : "true"
+      DD_CONTAINER_EXCLUDE : "name:datadog-agent name:g10x-ecomm-logic-prototype_postgres_1"
+    volumes :
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    logging:
+      driver: none

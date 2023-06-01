@@ -1,0 +1,154 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           ShopperAPI
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/ShopperAPI#readme>
+homepage:       https://github.com/githubuser/ShopperAPI#readme
+bug-reports:    https://github.com/githubuser/ShopperAPI/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2022 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/ShopperAPI
+
+library
+  exposed-modules:
+      ShopperAPI.Api.Handler.LoginHandler
+      ShopperAPI.Api.Handler.ManagerHandlers
+      ShopperAPI.Api.Types
+      ShopperAPI.Core.Config.Config
+      ShopperAPI.Core.Config.Types
+      ShopperAPI.Server
+      ShopperAPI.Services.Database.LoginDB
+      ShopperAPI.Services.Database.ManagerDB
+      ShopperAPI.Services.Database.Postgres
+      ShopperAPI.Services.Database.Types
+      ShopperAPI.Services.Logger.Logger
+      ShopperAPI.Services.Logger.Types
+  other-modules:
+      Paths_ShopperAPI
+  hs-source-dirs:
+      src
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bcrypt
+    , bytestring
+    , containers
+    , datadog
+    , directory
+    , email-validate
+    , exceptions
+    , hspec
+    , hspec-wai
+    , hspec-wai-json
+    , http-types
+    , lens
+    , monad-time
+    , mtl
+    , postgresql-simple
+    , resource-pool
+    , servant
+    , servant-auth-server
+    , servant-server
+    , text
+    , time
+    , transformers
+    , unliftio
+    , utf8-string
+    , uuid
+    , wai
+    , warp
+  default-language: Haskell2010
+
+executable ShopperAPI-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_ShopperAPI
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      ShopperAPI
+    , aeson
+    , base
+    , bcrypt
+    , bytestring
+    , containers
+    , datadog
+    , directory
+    , email-validate
+    , exceptions
+    , hspec
+    , hspec-wai
+    , hspec-wai-json
+    , http-types
+    , lens
+    , monad-time
+    , mtl
+    , postgresql-simple
+    , resource-pool
+    , servant
+    , servant-auth-server
+    , servant-server
+    , text
+    , time
+    , transformers
+    , unliftio
+    , utf8-string
+    , uuid
+    , wai
+    , warp
+  default-language: Haskell2010
+
+test-suite ShopperAPI-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_ShopperAPI
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      ShopperAPI
+    , aeson
+    , base
+    , bcrypt
+    , bytestring
+    , containers
+    , datadog
+    , directory
+    , email-validate
+    , exceptions
+    , hspec
+    , hspec-wai
+    , hspec-wai-json
+    , http-types
+    , lens
+    , monad-time
+    , mtl
+    , postgresql-simple
+    , resource-pool
+    , servant
+    , servant-auth-server
+    , servant-server
+    , text
+    , time
+    , transformers
+    , unliftio
+    , utf8-string
+    , uuid
+    , wai
+    , warp
+  default-language: Haskell2010
