@@ -1,0 +1,96 @@
+--  it "should respond with no request body error message" $ do
+    --    request
+    --        methodPost
+    --        "/orderstatus"
+    --        [(hContentType, "application/json" ),(hAuthorization, token)]
+    --        ""
+    --        `shouldRespondWith`
+    --        400 {matchBody = MatchBody postLogicResponseMatcher6}
+  
+    --  it "to check when request body details are incorrect" $ do
+    --    request
+    --        methodPost
+    --        "/modifylogic"
+    --        [(hContentType, "application/json" ),(hAuthorization, token)]
+    --        (encode apiType7)
+    --        `shouldRespondWith`
+    --        400 {matchBody = MatchBody postLogicResponseMatcher4}
+
+
+-- postLogicResponseMatcher6 _ body = case (eitherDecode body::Either String (ApiResponse String)) of
+--                                    Right val -> case val of
+--                                      ApiResponse _ _ 400  -> Nothing
+--                                      ApiResponse {} -> Just ("Response body mismatch" ++ show body)
+--                                    Left msg  -> Just(msg ++ show body)    
+
+-- postLogicResponseMatcher7 _ body = case (eitherDecode body::Either String (ApiResponse String)) of
+--                                    Right val -> case val of
+--                                      ApiResponse _  (Just "invalid orderid") 400  -> Nothing
+--                                      ApiResponse {} -> Just ("Response body mismatch" ++ show body)
+--                                    Left msg  -> Just(msg ++ show body)      
+
+
+
+
+
+
+
+type AcceptOrRejectOrder = "cartquantityupdate"
+                         :> Auth    '[JWT] AccessData
+                         :> Capture "cartid" Int
+                         :> ReqBody '[JSON] Quantity
+                         :> Post    '[JSON] (ApiResponse String)
+
+data AddProduct = AddProduct
+    {   productName        :: String
+    ,   productDescription :: ProductDescription
+    ,   category           :: String
+    ,   productPrice       :: Float
+    ,   currency           :: String
+    ,   status             :: String
+    }  deriving (Eq, Show, Generic)
+
+data ProductDescription = ProductDescription
+    {   quantity        :: Float
+    ,   description     :: String
+    }   deriving ( Eq, Show, Generic )
+
+data ProductCart = ProductCart { productname :: String,
+price :: Int ,
+currency :: String,
+availability :: String,
+description :: ProductDescription ,
+cartquantity :: Int,
+updatedat :: UTCTime
+
+ }deriving (Eq, Show, Generic)
+
+instance ToJSON ProductCart
+instance ToJSON ProductDescription
+
+data ProductDescription = ProductDescription
+ { quantity:: Int
+  ,description:: String
+   }deriving (Eq, Show, Generic)
+
+instance FromJSON ProductCart
+instance  FromJSON ProductDescription
+instance FromJSON ViewCart
+
+data ProductStock = ProductStock
+ {
+        productId  :: Int
+     ,  stockCount :: Int  
+ }deriving(Show,Generic)
+instance FromJSON ProductStock
+instance ToJSON ProductStock
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,59 @@
+{
+    "rulesdata":
+    {
+          "adjustmentMethod": "bankersRounding",
+          "ignoreClearancePrice": "true",
+          "noMarkupIfOnAd": "true",
+          "markupBasisPoints": 107
+    },
+    "rtype":"rule",
+    "effective": "2022-01-26"
+  }
+
+  {
+    "futureLogic": {
+        "storeExceptions": [
+            {
+                "rule":{ "adjustmentMethod": "bankersRounding",
+                "ignoreClearancePrice": "true",
+                "noMarkupIfOnAd": "true",
+                "markupBasisPoints": 100}
+    ,
+                "store": "669",
+                "zone": "210"
+            },
+            {
+                "rule": { "adjustmentMethod": "bankersRounding",
+                    "ignoreClearancePrice": "true",
+                    "noMarkupIfOnAd": "true",
+                    "markupBasisPoints": 101},
+                "store": "999",
+                "zone": "920"
+            }
+        ],
+        "zoneExceptions": [
+            {
+                "rule": { "adjustmentMethod": "bankersRounding",
+                    "ignoreClearancePrice": "true",
+                    "noMarkupIfOnAd": "true",
+                    "markupBasisPoints": 102},
+                "zone": "210"
+            },
+            {
+                "rule": { "adjustmentMethod": "bankersRounding",
+                    "ignoreClearancePrice": "true",
+                    "noMarkupIfOnAd": "true",
+                    "markupBasisPoints": 103},
+                "zone": "420"
+            }
+        ],
+        "rule": {
+            "adjustmentMethod": "bankersRounding",
+            "ignoreClearancePrice": "true",
+            "noMarkupIfOnAd": "true",
+            "markupBasisPoints": 104
+        },
+        "effective": "01-21-2022"
+    },
+    "upc": 123
+}

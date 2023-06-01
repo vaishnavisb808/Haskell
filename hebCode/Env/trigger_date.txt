@@ -1,0 +1,14 @@
+CREATE FUNCTION sync_lastmod() RETURNS trigger AS $$
+BEGIN
+  NEW.last_updated := NOW();
+
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER
+  sync_lastmod
+BEFORE UPDATE ON
+  shopper."order"
+FOR EACH ROW EXECUTE PROCEDURE
+  sync_lastmod();

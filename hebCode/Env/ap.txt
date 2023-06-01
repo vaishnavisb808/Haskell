@@ -1,0 +1,8 @@
+This handler function updates the order staus in order table as Accept/Reject for a given order id.
+also insert orderid ,status ,and updated time into tracking tabel. Updation can be done by Warehouse Manager.
+Request Stucture :
+OrderStatusUpdate API has POST request and contains :
+ JWT Authentication
+ Capture orderid
+ QueryParameter StatusKey
+

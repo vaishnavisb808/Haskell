@@ -1,0 +1,45 @@
+{"exceptions":[
+    {
+        "exceptionRule":{
+            "ruleData":{
+                "adjustmentMethod": "bankersRounding",
+                "ignoreClearancePrice": "true",
+                "noMarkupIfOnAd": "true",
+                "markupBasisPoints": 100
+             },
+             "ruleType":"Markup"
+        },
+        "exceptionData":{
+          "tag" : "StoreExceptionData", 
+          "contents": [111,222]
+            } ,
+        "exceptionType":"StoreException"
+  },
+  {
+    "exceptionRule":{
+        "ruleData":{
+            "adjustmentMethod": "bankersRounding",
+            "ignoreClearancePrice": "true",
+            "noMarkupIfOnAd": "true",
+            "markupBasisPoints": 101
+         },
+         "ruleType":"Markup"
+    },
+    "exceptionData":{
+      "tag" : "ZoneExceptionData", 
+      "contents": 112
+        } ,
+    "exceptionType":"ZoneException"
+}
+    ],
+    "rule":{
+        "ruleData":{
+            "adjustmentMethod": "bankersRounding",
+            "ignoreClearancePrice": "true",
+            "noMarkupIfOnAd": "true",
+            "markupBasisPoints": 100},
+        "ruleType":"Markup"
+         },
+      "effectiveFrom":"2022-01-26",
+      "upc":123
+    }
