@@ -1,0 +1,25 @@
+{
+    "result": {
+        "tags": [
+            {
+                "confidence": 42.9365501403809,
+                "tag": {
+                    "en": "cartoon"
+                }
+            },
+            {
+                "confidence": 37.4359817504883,
+                "tag": {
+                    "en": "set"
+                }
+            },
+            {
+                "confidence": 30.4765872955322,
+                "tag": {
+                    "en": "design"
+                }
+            }
+            
+        ]
+    }
+}
